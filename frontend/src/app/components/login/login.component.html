@@ -1,0 +1,25 @@
+<div class="login-wrapper d-flex align-items-center justify-content-center">
+  <div class="card shadow-sm p-4" style="width:100%; max-width:400px;">
+    <h2 class="text-center fw-bold mb-1">Admin Login</h2>
+    <p class="text-center text-muted mb-4">Sign in to manage your blog</p>
+
+    <div *ngIf="error" class="alert alert-danger py-2">{{ error }}</div>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label class="form-label">Username</label>
+        <input type="text" class="form-control" formControlName="username"
+               [class.is-invalid]="form.get('username')?.invalid && form.get('username')?.touched">
+      </div>
+      <div class="mb-4">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-control" formControlName="password"
+               [class.is-invalid]="form.get('password')?.invalid && form.get('password')?.touched">
+      </div>
+      <button type="submit" class="btn btn-primary w-100" [disabled]="loading">
+        <span *ngIf="loading" class="spinner-border spinner-border-sm me-2"></span>
+        Sign In
+      </button>
+    </form>
+  </div>
+</div>

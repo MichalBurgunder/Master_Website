@@ -1,0 +1,36 @@
+<div class="pairs-container" *ngIf="pairs.length > 0">
+
+  <div class="pairs-viewport">
+    <div
+      class="pair-slide"
+      *ngFor="let pair of pairs; let i = index"
+      [class.active]="i === currentIndex">
+
+      <div class="pair-images">
+        <div class="square-image">
+          <img [src]="pair.image1Url" [alt]="pair.caption + ' left'">
+        </div>
+        <div class="square-image">
+          <img [src]="pair.image2Url" [alt]="pair.caption + ' right'">
+        </div>
+      </div>
+
+      <p class="pair-caption" *ngIf="pair.caption">{{ pair.caption }}</p>
+    </div>
+  </div>
+
+  <!-- Navigation arrows -->
+  <button class="nav-btn nav-prev" (click)="prev()" *ngIf="pairs.length > 1">&#8592;</button>
+  <button class="nav-btn nav-next" (click)="next()" *ngIf="pairs.length > 1">&#8594;</button>
+
+  <!-- Dots -->
+  <div class="dots" *ngIf="pairs.length > 1">
+    <span
+      class="dot"
+      *ngFor="let pair of pairs; let i = index"
+      [class.active]="i === currentIndex"
+      (click)="goTo(i)">
+    </span>
+  </div>
+
+</div>

@@ -1,0 +1,6 @@
+*.json
+*/node_modules
+.angular
+*.txt
+*.lst
+*.class

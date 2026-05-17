@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
+  <div class="container">
+    <a class="navbar-brand fw-bold" routerLink="/">
+      <span class="text-primary">&#9676;</span> The Blog
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/thoughts" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Thoughts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/365daysofcomputer" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">365 Days of Computer</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/squares" routerLinkActive="active">Squares</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-auto">
+        <ng-container *ngIf="isLoggedIn; else loginBlock">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/admin">
+              <span class="badge bg-primary me-1">Admin</span>{{ username }}
+            </a>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-outline-light btn-sm ms-2" (click)="logout()">Logout</button>
+          </li>
+        </ng-container>
+        <ng-template #loginBlock>
+          <li class="nav-item">
+            <a class="btn btn-outline-light btn-sm" routerLink="/login">Admin Login</a>
+          </li>
+        </ng-template>
+      </ul>
+    </div>
+  </div>
+</nav>
