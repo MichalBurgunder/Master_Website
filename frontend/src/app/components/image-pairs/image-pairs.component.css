@@ -53,12 +53,21 @@
 }
 
 .pair-caption {
-  margin-top: 1rem;
-  font-size: 1rem;
-  color: #555;
-  font-style: italic;
+  /* margin-top: 1rem; */
+  font-size: 4rem;
+  color: #000000;
+  font-style: bold;
   text-align: center;
 }
+
+.pair-caption-number {
+  /* margin-top: 1rem; */
+  font-size: 1rem;
+  color: #000000;
+  font-style: bold;
+  text-align: center;
+}
+
 
 /* Navigation arrows */
 .nav-btn {

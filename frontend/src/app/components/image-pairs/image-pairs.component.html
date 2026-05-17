@@ -6,6 +6,8 @@
       *ngFor="let pair of pairs; let i = index"
       [class.active]="i === currentIndex">
 
+      <p class="pair-caption-number" *ngIf="pair.caption">{{ pair.number }}</p>
+      <p class="pair-caption" *ngIf="pair.caption">{{ pair.caption }}</p>
       <div class="pair-images">
         <div class="square-image">
           <img [src]="pair.image1Url" [alt]="pair.caption + ' left'">
@@ -15,7 +17,7 @@
         </div>
       </div>
 
-      <p class="pair-caption" *ngIf="pair.caption">{{ pair.caption }}</p>
+
     </div>
   </div>
 

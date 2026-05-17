@@ -24,6 +24,8 @@ public class ImagePair {
 
     private String caption;
 
+    public Integer number;
+
     @Column(nullable = false)
     private Integer displayOrder;
 
