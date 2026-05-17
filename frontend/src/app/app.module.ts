@@ -13,9 +13,8 @@ import { ImagePairsComponent } from './components/image-pairs/image-pairs.compon
 import { LoginComponent } from './components/login/login.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { SquaresComponent } from './components/squares/squares.component';
-// import { DaysOfcomputer } from './components/squares/squares.component';
+import { DaysOfComputerComponent } from './components/daysofcomputer/daysofcomputer.component';
 import { JwtInterceptor } from './interceptors/jwt.interceptor';
-// import { Thoughts } from './components/squares/squares.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +25,8 @@ import { JwtInterceptor } from './interceptors/jwt.interceptor';
     ImagePairsComponent,
     LoginComponent,
     AdminComponent,
-    SquaresComponent
+    SquaresComponent,
+    DaysOfComputerComponent
   ],
   imports: [
     BrowserModule,

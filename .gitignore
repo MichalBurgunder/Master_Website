@@ -3,4 +3,5 @@
 .angular
 *.txt
 *.lst
-*.class
+target
+.DS_Store

@@ -6,11 +6,13 @@ import { SquaresComponent } from './components/squares/squares.component';
 import { LoginComponent } from './components/login/login.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { AuthGuard } from './guards/auth.guard';
+import { DaysOfComputerComponent } from './components/daysofcomputer/daysofcomputer.component';
 
 const routes: Routes = [
   { path: '', component: BlogComponent },
   { path: 'squares', component: SquaresComponent },
   { path: 'articles/:id', component: ArticleDetailComponent },
+  { path: 'daysofcomputer/:id', component: DaysOfComputerComponent },
   { path: 'login', component: LoginComponent },
   { path: 'admin', component: AdminComponent, canActivate: [AuthGuard] },
   { path: '**', redirectTo: '' }

@@ -1,0 +1,25 @@
+<div class="container" style="max-width:800px;">
+
+  <div *ngIf="loading" class="text-center py-5">
+    <div class="spinner-border text-primary" role="status"></div>
+  </div>
+
+  <div *ngIf="error" class="alert alert-danger mt-4">{{ error }}</div>
+
+  <article *ngIf="article && !loading" class="mt-4">
+    <button class="btn btn-sm btn-outline-secondary mb-4" (click)="goBack()">← Back to Articles</button>
+
+    <span class="badge bg-primary mb-3 d-block" style="width:fit-content">{{ article.category.name }}</span>
+    <h1 class="fw-bold mb-2">{{ article.title }}</h1>
+    <p class="text-muted mb-4">{{ formatDate(article.createdAt) }}</p>
+
+    <img *ngIf="article.imageUrl"
+         [src]="article.imageUrl"
+         [alt]="article.title"
+         class="img-fluid rounded mb-4 w-100"
+         style="max-height:400px; object-fit:cover;">
+
+    <div class="article-content" [innerHTML]="article.content"></div>
+  </article>
+
+</div>
