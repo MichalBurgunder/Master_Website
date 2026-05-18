@@ -1,0 +1,49 @@
+<div class="category-layout">
+
+  <!-- Left Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+      <p class="sidebar-title">{{ category?.name ?? 'Articles' }}</p>
+
+      <div *ngIf="loading" class="text-center py-3">
+        <div class="spinner-border spinner-border-sm text-secondary" role="status"></div>
+      </div>
+
+      <!-- <p *ngIf="!loading && articles.length === 0" class="empty-sidebar">
+        No articles yet.
+      </p> -->
+
+      <ul class="article-list" *ngIf="!loading && articles.length > 0">
+        <li
+          *ngFor="let article of articles"
+          class="article-list-item"
+          [class.active]="selectedArticle?.id === article.id"
+          (click)="select(article)">
+          {{ article.title }}
+        </li>
+      </ul>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content-area">
+
+    <!-- <div *ngIf="!selectedArticle" class="empty-state">
+      <p>Select an article from the sidebar.</p>
+    </div> -->
+
+    <article *ngIf="selectedArticle">
+      <p class="text-muted mb-1">{{ formatDate(selectedArticle.createdAt) }}</p>
+      <h1 class="fw-bold mb-4">{{ selectedArticle.title }}</h1>
+      <img
+        *ngIf="selectedArticle.imageUrl"
+        [src]="selectedArticle.imageUrl"
+        [alt]="selectedArticle.title"
+        class="img-fluid rounded mb-4 w-100"
+        style="max-height:380px; object-fit:cover;">
+      <div class="article-body" [innerHTML]="selectedArticle.content"></div>
+    </article>
+
+  </main>
+
+</div>

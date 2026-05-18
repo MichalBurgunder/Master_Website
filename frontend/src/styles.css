@@ -4,9 +4,9 @@
 
 body {
   margin: 0;
-  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-  background-color: #f8f9fa;
-  color: #212529;
+  font-family: Helvetica, Arial;
+  background-color: #ffffff;
+  color: #000000;
 }
 
 a {
@@ -30,7 +30,7 @@ a {
   font-size: 1.75rem;
   font-weight: 700;
   margin-bottom: 0.25rem;
-  color: #1a1a2e;
+  color: #000000;
 }
 
 .section-divider {

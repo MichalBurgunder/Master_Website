@@ -14,6 +14,7 @@ import { LoginComponent } from './components/login/login.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { SquaresComponent } from './components/squares/squares.component';
 import { DaysOfComputerComponent } from './components/daysofcomputer/daysofcomputer.component';
+import { CategoryPageComponent } from './components/category-page/category-page.component';
 import { JwtInterceptor } from './interceptors/jwt.interceptor';
 
 @NgModule({
@@ -26,7 +27,8 @@ import { JwtInterceptor } from './interceptors/jwt.interceptor';
     LoginComponent,
     AdminComponent,
     SquaresComponent,
-    DaysOfComputerComponent
+    DaysOfComputerComponent,
+    CategoryPageComponent
   ],
   imports: [
     BrowserModule,

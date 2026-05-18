@@ -1,7 +1,49 @@
-<div class="container">
-  <section class="mt-4">
-    <h2 class="section-title">Squares</h2>
-    <hr class="section-divider">
-    <app-image-pairs></app-image-pairs>
-  </section>
+<div class="category-layout">
+
+  <!-- Left Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+      <p class="sidebar-title">Squares</p>
+
+      <div *ngIf="loading" class="text-center py-3">
+        <div class="spinner-border spinner-border-sm text-secondary" role="status"></div>
+      </div>
+
+      <p *ngIf="!loading && pairs.length === 0" class="empty-sidebar">
+        No pairs yet.
+      </p>
+
+      <ul class="article-list" *ngIf="!loading && pairs.length > 0">
+        <li
+          *ngFor="let pair of pairs"
+          class="article-list-item"
+          [class.active]="selectedPair?.id === pair.id"
+          (click)="select(pair)">
+          {{ pair.caption || 'Pair ' + pair.displayOrder }}
+        </li>
+      </ul>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content-area">
+
+    <div *ngIf="!selectedPair" class="empty-state">
+      <p>Select a pair from the sidebar.</p>
+    </div>
+
+    <div *ngIf="selectedPair" class="pair-view">
+      <p class="fw-bold mb-4">{{ selectedPair.caption }}</p>
+      <div class="pair-images">
+        <div class="square-image">
+          <img [src]="selectedPair.image1Url" [alt]="selectedPair.caption + ' left'">
+        </div>
+        <div class="square-image">
+          <img [src]="selectedPair.image2Url" [alt]="selectedPair.caption + ' right'">
+        </div>
+      </div>
+    </div>
+
+  </main>
+
 </div>
