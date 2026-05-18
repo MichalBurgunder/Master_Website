@@ -1,7 +1,7 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
+<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
   <div class="container">
     <a class="navbar-brand fw-bold" routerLink="/">
-      <span class="text-primary">&#9676;</span> The Blog
+      <span class="text-primary">Ꮗ</span> Michal Burgunder
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
       <span class="navbar-toggler-icon"></span>
@@ -26,15 +26,16 @@
             </a>
           </li>
           <li class="nav-item">
-            <button class="btn btn-outline-light btn-sm ms-2" (click)="logout()">Logout</button>
+            <button class="btn btn-outline-dark btn-sm ms-2" (click)="logout()">Logout</button>
           </li>
         </ng-container>
         <ng-template #loginBlock>
           <li class="nav-item">
-            <a class="btn btn-outline-light btn-sm" routerLink="/login">Admin Login</a>
+            <a class="btn btn-outline-dark btn-sm" routerLink="/login">Admin Login</a>
           </li>
         </ng-template>
       </ul>
     </div>
   </div>
 </nav>
+
