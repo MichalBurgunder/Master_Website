@@ -21,4 +21,6 @@ public class ArticleRequest {
     private Long categoryId;
 
     private String imageUrl;
+
+    private Integer type;
 }

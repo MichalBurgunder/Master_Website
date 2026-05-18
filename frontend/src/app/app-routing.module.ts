@@ -7,12 +7,15 @@ import { LoginComponent } from './components/login/login.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { AuthGuard } from './guards/auth.guard';
 import { DaysOfComputerComponent } from './components/daysofcomputer/daysofcomputer.component';
+import { CategoryPageComponent } from './components/category-page/category-page.component';
 
 const routes: Routes = [
   { path: '', component: BlogComponent },
   { path: 'squares', component: SquaresComponent },
   { path: 'articles/:id', component: ArticleDetailComponent },
   { path: 'daysofcomputer/:id', component: DaysOfComputerComponent },
+  { path: 'thoughts', component: CategoryPageComponent, data: { articleType: 1 } },
+  { path: '365daysofcomputer', component: CategoryPageComponent, data: { articleType: 2 } },
   { path: 'login', component: LoginComponent },
   { path: 'admin', component: AdminComponent, canActivate: [AuthGuard] },
   { path: '**', redirectTo: '' }

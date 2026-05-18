@@ -1,10 +1,12 @@
 .navbar-brand {
   font-size: 1.4rem;
   letter-spacing: 0.5px;
+  
 }
 
 nav {
   border-bottom: 3px solid black;
+  
 }
 
 .nav-link {

@@ -18,7 +18,12 @@ public class ArticleController {
     private final ArticleService articleService;
 
     @GetMapping
-    public ResponseEntity<List<Article>> getAll(@RequestParam(required = false) Long categoryId) {
+    public ResponseEntity<List<Article>> getAll(
+            @RequestParam(required = false) Long categoryId,
+            @RequestParam(required = false) Integer type) {
+        if (type != null) {
+            return ResponseEntity.ok(articleService.findByType(type));
+        }
         if (categoryId != null) {
             return ResponseEntity.ok(articleService.findByCategory(categoryId));
         }

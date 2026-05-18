@@ -25,6 +25,10 @@ public class ArticleService {
         return articleRepository.findByCategoryIdOrderByCreatedAtDesc(categoryId);
     }
 
+    public List<Article> findByType(Integer type) {
+        return articleRepository.findByTypeOrderByCreatedAtDesc(type);
+    }
+
     public Article findById(Long id) {
         return articleRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Article not found: " + id));
@@ -40,6 +44,7 @@ public class ArticleService {
         article.setSummary(request.getSummary());
         article.setCategory(category);
         article.setImageUrl(request.getImageUrl());
+        article.setType(request.getType());
         return articleRepository.save(article);
     }
 
@@ -53,6 +58,7 @@ public class ArticleService {
         article.setSummary(request.getSummary());
         article.setCategory(category);
         article.setImageUrl(request.getImageUrl());
+        article.setType(request.getType());
         return articleRepository.save(article);
     }
 

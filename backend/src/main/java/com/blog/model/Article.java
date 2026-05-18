@@ -33,6 +33,8 @@ public class Article {
 
     private String imageUrl;
 
+    private Integer type;
+
     @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt;
 

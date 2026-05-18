@@ -24,18 +24,16 @@ export class CategoryPageComponent implements OnInit {
 
   ngOnInit(): void {
     const slug = this.route.snapshot.url[0]?.path || '';
+    const articleType = this.route.snapshot.data['articleType'];
 
     this.categoryService.getAll().subscribe(categories => {
       this.category = categories.find(c => c.slug === slug) ?? null;
-      if (this.category) {
-        this.articleService.getAll(this.category.id).subscribe(articles => {
-          this.articles = articles;
-          this.selectedArticle = articles[0] ?? null;
-          this.loading = false;
-        });
-      } else {
+
+      this.articleService.getAll(undefined, articleType).subscribe(articles => {
+        this.articles = articles;
+        this.selectedArticle = articles[0] ?? null;
         this.loading = false;
-      }
+      });
     });
   }
 

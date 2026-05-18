@@ -10,9 +10,10 @@ export class ArticleService {
 
   constructor(private http: HttpClient) {}
 
-  getAll(categoryId?: number): Observable<Article[]> {
+  getAll(categoryId?: number, type?: number): Observable<Article[]> {
     let params = new HttpParams();
     if (categoryId) params = params.set('categoryId', categoryId.toString());
+    if (type != null) params = params.set('type', type.toString());
     return this.http.get<Article[]>(this.url, { params });
   }
 
