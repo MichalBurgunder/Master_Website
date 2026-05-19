@@ -4,6 +4,7 @@ import { Article } from '../../models/article.model';
 import { ArticleService } from '../../services/article.service';
 
 @Component({
+  standalone: false,
   selector: 'daysofcomputer',
   templateUrl: './daysofcomputer.component.html',
   styleUrls: ['./daysofcomputer.component.css']

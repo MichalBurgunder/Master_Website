@@ -31,11 +31,6 @@
       </button>
     </div> -->
 
-    <!-- Loading -->
-    <div *ngIf="loading" class="text-center py-5">
-      <div class="spinner-border text-primary" role="status"></div>
-    </div>
-
     <!-- Empty State -->
     <div *ngIf="!loading && articles.length === 0" class="text-center py-5 text-muted">
       <p class="fs-5">No articles yet. Check back soon!</p>

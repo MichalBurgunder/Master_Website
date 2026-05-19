@@ -10,6 +10,7 @@ import { ImagePairService } from '../../services/image-pair.service';
 type AdminTab = 'articles' | 'gallery';
 
 @Component({
+  standalone: false,
   selector: 'app-admin',
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css']

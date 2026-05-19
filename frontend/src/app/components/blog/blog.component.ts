@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Article } from '../../models/article.model';
 import { Category } from '../../models/category.model';
@@ -6,6 +6,7 @@ import { ArticleService } from '../../services/article.service';
 import { CategoryService } from '../../services/category.service';
 
 @Component({
+  standalone: false,
   selector: 'app-blog',
   templateUrl: './blog.component.html',
   styleUrls: ['./blog.component.css']
@@ -19,7 +20,8 @@ export class BlogComponent implements OnInit {
   constructor(
     private articleService: ArticleService,
     private categoryService: CategoryService,
-    private router: Router
+    private router: Router,
+    private cdr: ChangeDetectorRef
   ) {}
 
   ngOnInit(): void {
@@ -35,6 +37,7 @@ export class BlogComponent implements OnInit {
       next: articles => {
         this.articles = articles;
         this.loading = false;
+        this.cdr.detectChanges();
       },
       error: () => { this.loading = false; }
     });

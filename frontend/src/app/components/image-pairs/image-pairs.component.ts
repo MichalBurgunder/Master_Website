@@ -3,6 +3,7 @@ import { ImagePair } from '../../models/image-pair.model';
 import { ImagePairService } from '../../services/image-pair.service';
 
 @Component({
+  standalone: false,
   selector: 'app-image-pairs',
   templateUrl: './image-pairs.component.html',
   styleUrls: ['./image-pairs.component.css']

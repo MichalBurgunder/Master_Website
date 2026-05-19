@@ -4,6 +4,7 @@ import { Article } from '../../models/article.model';
 import { ArticleService } from '../../services/article.service';
 
 @Component({
+  standalone: false,
   selector: 'app-article-detail',
   templateUrl: './article-detail.component.html',
   styleUrls: ['./article-detail.component.css']
