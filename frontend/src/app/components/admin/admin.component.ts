@@ -41,8 +41,7 @@ export class AdminComponent implements OnInit {
       summary: [''],
       content: ['', Validators.required],
       categoryId: ['', Validators.required],
-      imageUrl: [''],
-      type: ['', Validators.required]
+      imageUrl: ['']
     });
 
     this.pairForm = this.fb.group({

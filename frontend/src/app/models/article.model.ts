@@ -7,7 +7,6 @@ export interface Article {
   summary: string;
   category: Category;
   imageUrl: string;
-  type: number;
   createdAt: string;
   updatedAt: string;
 }
@@ -18,5 +17,4 @@ export interface ArticleRequest {
   summary: string;
   categoryId: number;
   imageUrl: string;
-  type: number;
 }

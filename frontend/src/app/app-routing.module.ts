@@ -14,8 +14,8 @@ const routes: Routes = [
   { path: 'squares', component: SquaresComponent },
   { path: 'articles/:id', component: ArticleDetailComponent },
   { path: 'daysofcomputer/:id', component: DaysOfComputerComponent },
-  { path: 'thoughts', component: CategoryPageComponent, data: { articleType: 1 } },
-  { path: '365daysofcomputer', component: CategoryPageComponent, data: { articleType: 2 } },
+  { path: 'thoughts', component: CategoryPageComponent, data: { categoryId: 1 } },
+  { path: '365daysofcomputer', component: CategoryPageComponent, data: { categoryId: 2 } },
   { path: 'login', component: LoginComponent },
   { path: 'admin', component: AdminComponent, canActivate: [AuthGuard] },
   { path: '**', redirectTo: '' }
