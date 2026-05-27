@@ -16,6 +16,7 @@ import { SquaresComponent } from './components/squares/squares.component';
 import { DaysOfComputerComponent } from './components/daysofcomputer/daysofcomputer.component';
 import { CategoryPageComponent } from './components/category-page/category-page.component';
 import { JwtInterceptor } from './interceptors/jwt.interceptor';
+import { QuillModule } from 'ngx-quill';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { JwtInterceptor } from './interceptors/jwt.interceptor';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    QuillModule.forRoot()
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }

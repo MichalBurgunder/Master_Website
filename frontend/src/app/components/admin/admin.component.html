@@ -44,9 +44,9 @@
               <label class="form-label">Summary</label>
               <input type="text" class="form-control" formControlName="summary" placeholder="Short description">
             </div>
+            <label class="form-label">Content</label>
             <div class="mb-3">
-              <label class="form-label">Content *</label>
-              <textarea class="form-control" formControlName="content" rows="6"></textarea>
+              <quill-editor formControlName="content" [modules]="{ toolbar: false }"></quill-editor>
             </div>
             <div class="mb-3">
               <label class="form-label">Image URL</label>
