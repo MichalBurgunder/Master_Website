@@ -10,7 +10,7 @@ import { DaysOfComputerComponent } from './components/daysofcomputer/daysofcompu
 import { CategoryPageComponent } from './components/category-page/category-page.component';
 
 const routes: Routes = [
-  { path: '', component: BlogComponent },
+  { path: '', component: CategoryPageComponent, data: { categoryId: 1 } },
   { path: 'squares', component: SquaresComponent },
   { path: 'articles/:id', component: ArticleDetailComponent },
   { path: 'daysofcomputer/:id', component: DaysOfComputerComponent },
